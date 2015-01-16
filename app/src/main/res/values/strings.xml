@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GeoTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="q1">Constantinople is the largest city in Turkey</string>
+    <string name="truebtn">True</string>
+    <string name="falsebtn">False</string>
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
