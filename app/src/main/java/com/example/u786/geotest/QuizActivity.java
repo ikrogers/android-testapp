@@ -74,6 +74,14 @@ public class QuizActivity extends ActionBarActivity {
                 updateQuestion();
             }
         });
+        mQuestionTextView = (TextView) findViewById(R.id.qtextView);
+        mQuestionTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                updateQuestion();
+            }
+        });
     }
 
 
