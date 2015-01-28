@@ -9,7 +9,8 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:id="@+id/linearLayout">
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,15 +39,31 @@
                 android:id="@+id/falsebtn"
                 android:layout_gravity="center" />
         </LinearLayout>
-        <Button
-            android:id="@+id/next_button"
-            android:text="@string/next_btn"
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/arrow_right"
-            android:drawablePadding="4dp"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/prev_button"
+                android:text="@string/prev_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/arrow_left"
+                android:drawablePadding="4dp"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:id="@+id/next_button"
+                android:text="@string/next_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/arrow_right"
+                android:drawablePadding="4dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
 </RelativeLayout>

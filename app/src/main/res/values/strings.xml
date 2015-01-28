@@ -8,6 +8,7 @@
     <string name="falsebtn">False</string>
     <string name="correct_toast">Correct!</string>
     <string name="next_btn">Next</string>
+    <string name="prev_btn">Prev</string>
     <string name="incorrect_toast">Incorrect!</string>
     <string name="action_settings">Settings</string>
 
