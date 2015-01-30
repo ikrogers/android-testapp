@@ -1,5 +1,6 @@
 package com.example.u786.geotest;
 
+import android.app.AlertDialog;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -31,12 +32,19 @@ public class QuizActivity extends ActionBarActivity {
         mQuestionTextView.setText(question);
     }
 
+    private void alertBox(String title, String text){
+        AlertDialog close = new AlertDialog.Builder(this).setTitle(title).setMessage(text).setNeutralButton("OK", null).show();
+
+    }
+
     private void checkAnswer(boolean userPressedTrue) {
         boolean answerIsTrue = mQuestionBank[mCurrentIndex].isTrueQuestion();
         int messageResId = 0;
         if (userPressedTrue == answerIsTrue) {
             messageResId = R.string.correct_toast;
+            alertBox("Yay!", "Correct! On to the next question!");
         } else {
+            alertBox("Darn...", "Incorrect :(. Next question!");
             messageResId = R.string.incorrect_toast;
         }
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
@@ -58,6 +66,8 @@ public class QuizActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 checkAnswer(true);
+                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                updateQuestion();
             }
         });
         mFalseButton = (Button) findViewById(R.id.falsebtn);
@@ -65,7 +75,10 @@ public class QuizActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 checkAnswer(false);
+                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                updateQuestion();
             }
+
         });
 
         mNextButton = (ImageButton) findViewById(R.id.next_button);
