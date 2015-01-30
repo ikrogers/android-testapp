@@ -1,8 +1,8 @@
 package com.example.u786.geotest;
 
 import android.app.AlertDialog;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,7 +32,7 @@ public class QuizActivity extends ActionBarActivity {
         mQuestionTextView.setText(question);
     }
 
-    private void alertBox(String title, String text){
+    private void alertBox(String title, String text) {
         AlertDialog close = new AlertDialog.Builder(this).setTitle(title).setMessage(text).setNeutralButton("OK", null).show();
 
     }
@@ -93,11 +93,10 @@ public class QuizActivity extends ActionBarActivity {
         mPrevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mCurrentIndex == 0){
-                    mCurrentIndex =  mQuestionBank.length-1;
+                if (mCurrentIndex == 0) {
+                    mCurrentIndex = mQuestionBank.length - 1;
                     updateQuestion();
-                }
-                else {
+                } else {
                     mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
                     updateQuestion();
                 }
